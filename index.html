@@ -3,203 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reliable Used Cars Under $15K — Daytona Beach</title>
+<title>Car Finder — Reliable Used Cars, One Search</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --asphalt:#15191D;
-    --asphalt-2:#1E242A;
-    --paper:#ECEDE8;
-    --ink:#191C1A;
-    --muted:#5C6168;
-    --line:#D5D7D0;
-    --amber:#F2B33D;
-    --green:#2C6E49;
+    --asphalt:#15191D;--asphalt-2:#1E242A;--paper:#ECEDE8;--card:#fff;
+    --ink:#191C1A;--muted:#5C6168;--line:#D5D7D0;--amber:#F2B33D;--amber-dk:#D4922A;--green:#2C6E49;--red:#B23A2E;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    font-family:'Inter',system-ui,sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
   .wrap{max-width:760px;margin:0 auto;padding:0 20px}
 
-  /* HERO */
-  .hero{
-    background:var(--asphalt);
-    color:var(--paper);
-    padding:48px 0 40px;
-    border-bottom:3px solid var(--amber);
-  }
-  .eyebrow{
-    font-family:'Saira Condensed',sans-serif;
-    font-weight:600;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    font-size:.72rem;
-    color:var(--amber);
-    margin-bottom:14px;
-  }
-  .hero h1{
-    font-family:'Saira Condensed',sans-serif;
-    font-weight:700;
-    font-size:clamp(2.4rem,8vw,3.8rem);
-    line-height:.98;
-    letter-spacing:-.01em;
-    text-transform:uppercase;
-  }
-  .hero h1 .budget{color:var(--amber)}
-  .hero p.sub{
-    margin-top:16px;
-    max-width:48ch;
-    color:#C3C8C9;
-    font-size:1.02rem;
-  }
-  .stamp{
-    display:inline-flex;align-items:center;gap:8px;
-    margin-top:22px;
-    font-family:'Space Mono',monospace;
-    font-size:.74rem;
-    letter-spacing:.04em;
-    color:#8B9197;
-    border:1px solid #333B42;
-    padding:7px 12px;
-    border-radius:2px;
-  }
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+  .hero{background:var(--asphalt);color:var(--paper);padding:44px 0 36px;border-bottom:3px solid var(--amber)}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:var(--amber);margin-bottom:14px}
+  .hero h1{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:clamp(2.3rem,8vw,3.6rem);line-height:.98;letter-spacing:-.01em;text-transform:uppercase}
+  .hero h1 .accent{color:var(--amber)}
+  .hero p.sub{margin-top:14px;max-width:52ch;color:#C3C8C9;font-size:1.02rem}
 
-  /* SECTIONS */
-  section{padding:40px 0}
-  .label{
-    font-family:'Saira Condensed',sans-serif;
-    font-weight:600;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    font-size:.78rem;
-    color:var(--muted);
-    display:flex;align-items:center;gap:12px;
-    margin-bottom:20px;
-  }
+  section{padding:30px 0}
+  .label{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:12px;margin-bottom:16px}
   .label::after{content:"";flex:1;height:1px;background:var(--line)}
-  h2{
-    font-family:'Saira Condensed',sans-serif;
-    font-weight:700;
-    font-size:1.7rem;
-    text-transform:uppercase;
-    letter-spacing:.005em;
-    margin-bottom:6px;
-  }
-  .lead{color:var(--muted);max-width:60ch;margin-bottom:8px}
 
-  /* MODELS GRID */
-  .models{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:18px;
-  }
-  .model{
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:4px;
-    padding:16px 16px 18px;
-  }
-  .model h3{
-    font-family:'Saira Condensed',sans-serif;
-    font-weight:600;
-    font-size:1.15rem;
-    text-transform:uppercase;
-    letter-spacing:.01em;
-  }
-  .model .note{font-size:.88rem;color:var(--muted);margin-top:5px}
-  .model .yr{
-    font-family:'Space Mono',monospace;
-    font-size:.72rem;color:var(--green);font-weight:700;
-    margin-top:10px;display:block;
-  }
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  label.cap{font-family:'Saira Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;color:var(--ink)}
+  input,select{font-family:'Inter',sans-serif;font-size:1rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:5px;padding:11px 12px;width:100%;appearance:none}
+  input:focus,select:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+  select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235C6168' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
+  .hint{font-size:.78rem;color:var(--muted)}
+  .price-wrap{display:flex;align-items:center;gap:10px}
+  .price-wrap .dollar{font-family:'Space Mono',monospace;font-weight:700;color:var(--muted)}
 
-  /* LISTINGS */
-  .listing{
-    background:#fff;
-    border:1px solid var(--line);
-    border-left:3px solid var(--amber);
-    border-radius:4px;
-    padding:16px 18px;
-    margin-bottom:10px;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:16px;
-  }
-  .listing .car h3{
-    font-family:'Saira Condensed',sans-serif;
-    font-weight:600;font-size:1.18rem;
-    text-transform:uppercase;letter-spacing:.01em;
-  }
-  .listing .meta{
-    font-family:'Space Mono',monospace;
-    font-size:.74rem;color:var(--muted);margin-top:6px;
-  }
-  .listing .price{
-    font-family:'Space Mono',monospace;
-    font-weight:700;font-size:1.25rem;
-    white-space:nowrap;color:var(--ink);
-  }
-  .verify{
-    font-size:.82rem;color:var(--muted);
-    margin-top:14px;font-style:italic;
-  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{font-family:'Inter',sans-serif;font-size:.84rem;font-weight:500;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;transition:all .14s ease;color:var(--ink)}
+  .chip:hover,.chip:focus-visible{border-color:var(--amber);background:#FFF8EC}
+  .chip:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 
-  /* BROWSE LINKS */
-  .links{display:grid;gap:10px;margin-top:16px}
-  a.browse{
-    display:flex;justify-content:space-between;align-items:center;
-    background:#fff;border:1px solid var(--line);border-radius:4px;
-    padding:15px 18px;text-decoration:none;color:var(--ink);
-    transition:border-color .15s ease,transform .15s ease;
-  }
-  a.browse:hover,a.browse:focus-visible{border-color:var(--amber);transform:translateX(3px)}
-  a.browse:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-  a.browse .name{font-family:'Saira Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem}
-  a.browse .how{font-size:.82rem;color:var(--muted);margin-top:2px}
-  a.browse .arrow{font-family:'Space Mono',monospace;color:var(--amber);font-weight:700}
+  .watch{margin-top:10px;background:#FBEFD9;border:1px solid #E7CB8E;border-left:3px solid var(--amber-dk);border-radius:5px;padding:11px 13px;font-size:.86rem;color:#5A4A22;display:none}
+  .watch.show{display:block}
+  .watch b{color:#473A19}
 
-  /* CHECKLIST */
-  .check{
-    background:var(--asphalt);color:var(--paper);
-    border-radius:6px;padding:26px 24px;margin-top:8px;
-  }
-  .check h2{color:#fff}
-  .check ul{list-style:none;margin-top:14px}
-  .check li{
-    padding:9px 0 9px 28px;position:relative;
-    border-bottom:1px solid #2A3137;font-size:.95rem;color:#D4D8D9;
-  }
+  .go{margin-top:20px;width:100%;font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:1.15rem;background:var(--amber);color:var(--asphalt);border:none;border-radius:6px;padding:16px;cursor:pointer;transition:background .14s ease}
+  .go:hover,.go:focus-visible{background:var(--amber-dk)}
+  .go:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .btn-sm{font-family:'Saira Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.86rem;border-radius:5px;padding:9px 14px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);transition:all .14s ease}
+  .btn-sm:hover,.btn-sm:focus-visible{border-color:var(--amber)}
+  .btn-sm:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  .btn-sm.solid{background:var(--asphalt);color:var(--paper);border-color:var(--asphalt)}
+  .btn-sm.solid:hover{background:var(--asphalt-2)}
+
+  .summary{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:6px;padding:13px 15px;margin-bottom:16px;line-height:1.7}
+  .summary b{color:var(--ink)}
+  .summary .clean{color:var(--green);font-weight:700}
+
+  a.site{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:5px;padding:15px 18px;text-decoration:none;color:var(--ink);margin-bottom:10px;transition:border-color .14s ease,transform .14s ease}
+  a.site.hero-link{border-left-width:5px;background:#FFFDF8}
+  a.site:hover,a.site:focus-visible{border-color:var(--amber);transform:translateX(3px)}
+  a.site:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  a.site .name{font-family:'Saira Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.12rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .tag{font-family:'Inter',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:var(--green);color:#fff;border-radius:3px;padding:2px 6px}
+  a.site .scope{font-size:.8rem;color:var(--muted);margin-top:3px}
+  a.site .arrow{font-family:'Space Mono',monospace;color:var(--amber-dk);font-weight:700;font-size:1.1rem}
+  .empty{color:var(--muted);font-style:italic;padding:8px 0}
+
+  .save-row{display:flex;gap:10px;margin-bottom:14px}
+  .save-row input{flex:1}
+  .saved-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1px solid var(--line);border-radius:5px;padding:11px 14px;margin-bottom:8px}
+  .saved-item .nm{font-weight:600;font-size:.94rem}
+  .saved-item .crit{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--muted);margin-top:2px}
+  .saved-actions{display:flex;gap:6px;flex-shrink:0}
+  .mini{font-size:.74rem;font-weight:600;border-radius:4px;padding:6px 10px;cursor:pointer;border:1px solid var(--line);background:var(--card)}
+  .mini.run{background:var(--amber);border-color:var(--amber);color:var(--asphalt)}
+  .mini.del{color:var(--red);border-color:#E4C3BE}
+  .mini:focus-visible{outline:2px solid var(--green);outline-offset:1px}
+
+  .check{background:var(--asphalt);color:var(--paper);border-radius:6px;padding:24px 22px}
+  .check h2{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:1.5rem;text-transform:uppercase;color:#fff;margin-bottom:6px}
+  .check p{color:#AEB4B6;font-size:.9rem}
+  .check ul{list-style:none;margin-top:12px}
+  .check li{padding:8px 0 8px 26px;position:relative;border-bottom:1px solid #2A3137;font-size:.92rem;color:#D4D8D9}
   .check li:last-child{border-bottom:none}
-  .check li::before{
-    content:"✓";position:absolute;left:0;top:9px;
-    color:var(--amber);font-weight:700;
-  }
+  .check li::before{content:"✓";position:absolute;left:0;top:8px;color:var(--amber);font-weight:700}
 
-  footer{
-    padding:30px 0 50px;color:var(--muted);font-size:.8rem;
-    border-top:1px solid var(--line);
-  }
+  footer{padding:26px 0 48px;color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);margin-top:30px}
   footer b{color:var(--ink)}
 
-  @media (max-width:560px){
-    .models{grid-template-columns:1fr}
-    .listing{flex-direction:column;gap:8px}
-    .listing .price{font-size:1.4rem}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{transition:none!important;scroll-behavior:auto}
-  }
+  @media (max-width:560px){.grid{grid-template-columns:1fr}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -207,125 +102,56 @@
   <header class="hero">
     <div class="wrap">
       <div class="eyebrow">Daytona Beach · Volusia County, FL</div>
-      <h1>Reliable Used Cars <span class="budget">Under $15K</span></h1>
-      <p class="sub">A shortlist built around vehicles that hold up — clean title only, no salvage, rebuilt, or flood history.</p>
-      <span class="stamp"><span class="dot"></span> CLEAN TITLE ONLY · UPDATED JUN 2026</span>
+      <h1>Car <span class="accent">Finder</span></h1>
+      <p class="sub">Set your criteria once, then search five marketplaces at once — clean title filtered in. Save your searches and re-run them anytime.</p>
     </div>
   </header>
 
   <section>
     <div class="wrap">
-      <div class="label">The screen</div>
-      <h2>What "reliable" means here</h2>
-      <p class="lead">Two filters do most of the work. First, <b>clean title</b> — that rules out cars previously written off by an insurer. Second, a track record: the models below are the ones that routinely cross 150K+ miles without drama, which is what you want when buying used. Everything here sits comfortably under the $15,000 line.</p>
+      <div class="label">Reliable quick-picks</div>
+      <p class="hint" style="margin-bottom:10px">Tap a known-dependable model, or build your own below.</p>
+      <div class="chips" id="chips"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:6px">
+    <div class="wrap">
+      <div class="label">Your criteria</div>
+      <div class="grid">
+        <div class="field"><label class="cap" for="zip">ZIP code</label><input id="zip" type="text" inputmode="numeric" maxlength="5" value="32119"></div>
+        <div class="field"><label class="cap" for="radius">Search radius</label>
+          <select id="radius"><option value="25">25 miles</option><option value="50" selected>50 miles</option><option value="75">75 miles</option><option value="100">100 miles</option><option value="200">200 miles</option><option value="0">Any distance</option></select>
+        </div>
+        <div class="field"><label class="cap" for="maxPrice">Max price</label><div class="price-wrap"><span class="dollar">$</span><input id="maxPrice" type="number" inputmode="numeric" value="15000" step="500" min="0"></div></div>
+        <div class="field"><label class="cap" for="maxMiles">Max mileage</label><input id="maxMiles" type="number" inputmode="numeric" value="150000" step="5000" min="0" placeholder="Any"></div>
+        <div class="field"><label class="cap" for="make">Make</label><select id="make"></select></div>
+        <div class="field"><label class="cap" for="model">Model</label><select id="model"><option value="">Any model</option></select></div>
+        <div class="field"><label class="cap" for="minYear">Min year</label><select id="minYear"></select></div>
+        <div class="field"><label class="cap" for="body">Body type</label>
+          <select id="body"><option value="">Any</option><option value="sedan">Sedan</option><option value="suv">SUV / Crossover</option><option value="truck">Truck</option><option value="hatchback">Hatchback</option><option value="wagon">Wagon</option><option value="coupe">Coupe</option><option value="minivan">Minivan</option><option value="van">Van</option><option value="convertible">Convertible</option></select>
+        </div>
+      </div>
+      <div class="watch" id="watch"></div>
+      <button class="go" id="go">Find Listings →</button>
+    </div>
+  </section>
+
+  <section style="padding-top:6px">
+    <div class="wrap">
+      <div class="label">Live results</div>
+      <div id="results"><p class="empty">Set your criteria above and tap <b>Find Listings</b> — your links appear here.</p></div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <div class="label">Worth targeting</div>
-      <h2>Models that go the distance</h2>
-      <p class="lead">Search by these first. At this budget you're typically looking at model years roughly 2013–2019 depending on mileage.</p>
-      <div class="models">
-        <div class="model">
-          <h3>Toyota Corolla / Camry</h3>
-          <p class="note">The benchmark for low-drama ownership. Cheap parts, easy service anywhere.</p>
-          <span class="yr">SWEET SPOT: '14–'19</span>
-        </div>
-        <div class="model">
-          <h3>Honda Civic / Accord</h3>
-          <p class="note">Same reliability tier as the Toyotas, a little more fun to drive.</p>
-          <span class="yr">SWEET SPOT: '13–'18</span>
-        </div>
-        <div class="model">
-          <h3>Toyota RAV4</h3>
-          <p class="note">If you want an SUV. Holds value, holds up. Great resale later.</p>
-          <span class="yr">SWEET SPOT: '13–'17</span>
-        </div>
-        <div class="model">
-          <h3>Honda CR-V</h3>
-          <p class="note">Roomy, dependable compact SUV. Avoid the early 1.5T oil-dilution years.</p>
-          <span class="yr">SWEET SPOT: '14–'16</span>
-        </div>
-        <div class="model">
-          <h3>Mazda3 / CX-5</h3>
-          <p class="note">Reliable and the nicest to drive of the bunch. Slightly smaller dealer network.</p>
-          <span class="yr">SWEET SPOT: '14–'18</span>
-        </div>
-        <div class="model">
-          <h3>Toyota Prius</h3>
-          <p class="note">Bulletproof hybrid, excellent for high-mileage commuting or side gigs.</p>
-          <span class="yr">SWEET SPOT: '13–'17</span>
-        </div>
+      <div class="label">Saved searches</div>
+      <div class="save-row">
+        <input id="saveName" type="text" placeholder="Name this search (e.g. Corolla under 12k)">
+        <button class="btn-sm solid" id="saveBtn">Save current</button>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="label">Live nearby</div>
-      <h2>Examples listed locally</h2>
-      <p class="lead">A few that showed up in the Daytona area. Listings move fast — confirm each is still available and pull a vehicle history report before committing.</p>
-
-      <div class="listing">
-        <div class="car">
-          <h3>2009 Honda Element EX</h3>
-          <div class="meta">142K MI · CLEAN FL TITLE · DAYTONA BEACH</div>
-        </div>
-        <div class="price">$9,250</div>
-      </div>
-
-      <div class="listing">
-        <div class="car">
-          <h3>2010 Toyota Matrix XR AWD</h3>
-          <div class="meta">169K MI · AUTO · PORT ORANGE AREA</div>
-        </div>
-        <div class="price">$6,950</div>
-      </div>
-
-      <div class="listing">
-        <div class="car">
-          <h3>2016 Subaru Outback Limited AWD</h3>
-          <div class="meta">170K MI · LEATHER · MOONROOF · NAV</div>
-        </div>
-        <div class="price">$7,950</div>
-      </div>
-
-      <div class="listing">
-        <div class="car">
-          <h3>2008 Chevy Impala LS</h3>
-          <div class="meta">78K MI · ONE OWNER · CLEAN TITLE</div>
-        </div>
-        <div class="price">$5,500</div>
-      </div>
-
-      <p class="verify">Prices and availability shift daily — treat these as a snapshot, not a guarantee.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="label">Keep browsing</div>
-      <h2>Live searches near you</h2>
-      <p class="lead">Each link goes to current inventory. Set the max price to $15,000 and turn on the clean-title / no-accident filter.</p>
-      <div class="links">
-        <a class="browse" href="https://www.cargurus.com/Cars/spt-cars-under-15000-Daytona-Beach_L4931" target="_blank" rel="noopener">
-          <span><span class="name">CarGurus</span><div class="how">Filter History → Clean title only</div></span>
-          <span class="arrow">→</span>
-        </a>
-        <a class="browse" href="https://www.cars.com/shopping/daytona_beach-fl/" target="_blank" rel="noopener">
-          <span><span class="name">Cars.com</span><div class="how">Set max $15K → "No accidents / clean title"</div></span>
-          <span class="arrow">→</span>
-        </a>
-        <a class="browse" href="https://www.carfax.com/" target="_blank" rel="noopener">
-          <span><span class="name">CARFAX</span><div class="how">History report built into every listing</div></span>
-          <span class="arrow">→</span>
-        </a>
-        <a class="browse" href="https://www.truecar.com/used-cars-for-sale/listings/location-daytona-beach-fl/" target="_blank" rel="noopener">
-          <span><span class="name">TrueCar</span><div class="how">Stack price + clean title + radius</div></span>
-          <span class="arrow">→</span>
-        </a>
-      </div>
+      <div id="savedList"><p class="empty">No saved searches yet — set criteria and tap Save.</p></div>
     </div>
   </section>
 
@@ -333,12 +159,13 @@
     <div class="wrap">
       <div class="check">
         <h2>Before you hand over money</h2>
+        <p>AutoTempest filters clean title for you. On the other sites, toggle the title / no-accident filter once you land — then run this checklist.</p>
         <ul>
           <li>Run the VIN through a history report — confirm the title is actually clean, not just claimed.</li>
-          <li>Check for clean, consistent service records, especially oil changes.</li>
-          <li>In Florida, look hard for rust underneath and any signs of flood/water damage.</li>
-          <li>Get a pre-purchase inspection from an independent mechanic ($100–150, worth every dollar).</li>
-          <li>Test drive cold — start it yourself after it's sat overnight if you can.</li>
+          <li>Check for consistent service records, especially regular oil changes.</li>
+          <li>In Florida, check hard for rust underneath and any sign of flood / water damage.</li>
+          <li>Get a pre-purchase inspection from an independent mechanic ($100–150, worth it).</li>
+          <li>Start it cold if you can — after it's sat overnight — and listen.</li>
         </ul>
       </div>
     </div>
@@ -346,9 +173,227 @@
 
   <footer>
     <div class="wrap">
-      A <b>clean title</b> means the vehicle has never been declared a total loss by an insurer — it excludes salvage, rebuilt, and flood-branded titles. This sheet is a starting point for the Daytona Beach / Volusia County area; verify all prices, mileage, and title status directly with the seller.
+      <b>How the links work:</b> AutoTempest searches AutoTrader, Cars.com, CarGurus, eBay Motors, and Craigslist in one pass, with a real clean-title filter. Cars.com, Facebook Marketplace, and Google are included separately (Facebook isn't in AutoTempest's pool). Inventory is live at the moment you tap. The <b>reliability watch-outs</b> are general, model-level notes — always inspect the specific car. A <b>clean title</b> means the vehicle was never declared a total loss; it excludes salvage, rebuilt, and flood titles.
     </div>
   </footer>
 
+<script>
+(function(){
+  const MAKES=[
+    {n:"Any make",cc:"",models:[]},
+    {n:"Toyota",cc:"toyota",models:[
+      {n:"Corolla",atm:"allcorolla",cc:"toyota-corolla",w:"One of the most reliable cars made. Minor: some 2009–2010 4-cyl burned oil. Otherwise buy with confidence."},
+      {n:"Camry",atm:"allcamry",cc:"toyota-camry",w:"Very reliable. Watch 2007–2009 4-cyl for excessive oil consumption (2AZ-FE). 2012+ are solid."},
+      {n:"RAV4",atm:"allrav4",cc:"toyota-rav4",w:"Dependable. Some 2019+ owners report transmission hesitation and fuel-fill quirks. Older years trouble-free."},
+      {n:"Prius",atm:"allprius",cc:"toyota-prius",w:"Bulletproof hybrid. On 150k+ cars, budget for an eventual hybrid battery. Some 2010–2015 head-gasket reports."},
+      {n:"Tacoma",atm:"alltacoma",cc:"toyota-tacoma",w:"Holds value extremely well. Check 2005–2010 frames for rust; verify any recall frame work was done."},
+      {n:"Highlander",atm:"allhighlander",cc:"toyota-highlander",w:"Reliable family SUV. V6 is strong. Few systemic issues — inspect normally."}
+    ]},
+    {n:"Honda",cc:"honda",models:[
+      {n:"Civic",atm:"allcivic",cc:"honda-civic",w:"Excellent overall. 2016–2018 1.5-turbo had fuel-in-oil dilution (mostly a cold-climate issue, less in FL). 2006–2008 had rare block cracking."},
+      {n:"Accord",atm:"allaccord",cc:"honda-accord",w:"Very reliable. Avoid 2008–2012 V6 for oil burning / VCM issues. 2003–2007 V6 autos had transmission failures."},
+      {n:"CR-V",cc:"honda-cr_v",w:"Great compact SUV. 2015–2018 1.5-turbo had oil-dilution complaints. 2007–2014 are the safe, simple pick."},
+      {n:"Fit",atm:"allfit",cc:"honda-fit",w:"Tiny but tough and thrifty. Very few issues — a great cheap-to-run choice."},
+      {n:"Pilot",atm:"allpilot",cc:"honda-pilot",w:"Solid 3-row. Some 2016–2017 9-speed transmission complaints; V6 VCM oil use on older models."},
+      {n:"Element",atm:"allelement",cc:"honda-element",w:"Quirky and famously durable. Rust is the main enemy — inspect underbody. Otherwise hard to kill."}
+    ]},
+    {n:"Mazda",cc:"mazda",models:[
+      {n:"Mazda3",atm:"allmazda3",cc:"mazda-mazda3",w:"Reliable and the most fun to drive here. Watch older models for rust; otherwise low-drama."},
+      {n:"Mazda6",atm:"allmazda6",cc:"mazda-mazda6",w:"Reliable midsize, nice to drive. Check older years for rear-wheel-arch rust."},
+      {n:"CX-5",cc:"mazda-cx_5",w:"Well-built compact SUV with few systemic issues. A strong, under-the-radar reliable pick."},
+      {n:"CX-30",cc:"mazda-cx_30",w:"Newer and well-built; limited long-term data but strong early reliability."}
+    ]},
+    {n:"Subaru",cc:"subaru",models:[
+      {n:"Outback",atm:"alloutback",cc:"subaru-outback",w:"Capable AWD wagon. Older 2.5 engines (pre-2013) can have head-gasket issues; 2011–2014 some oil consumption. Check CVT service."},
+      {n:"Forester",atm:"allforester",cc:"subaru-forester",w:"Practical AWD SUV. Same notes as Outback: head gaskets on older 2.5s, oil use on 2011–2014."},
+      {n:"Impreza",atm:"allimpreza",cc:"subaru-impreza",w:"Reliable AWD compact. Check oil consumption on 2011–2014; otherwise solid."},
+      {n:"Crosstrek",atm:"allcrosstrek",cc:"subaru-crosstrek",w:"Popular AWD crossover, generally dependable. Modest power — test-drive for highway comfort."}
+    ]},
+    {n:"Nissan",cc:"nissan",models:[
+      {n:"Altima",atm:"allaltima",cc:"nissan-altima",w:"\u26A0 The big one: the CVT transmission is a known weak point. Budget for possible replacement; favor well-maintained, lower-mile examples."},
+      {n:"Sentra",atm:"allsentra",cc:"nissan-sentra",w:"\u26A0 Same CVT caution as Altima. Verify smooth shifting and full service history on a test drive."},
+      {n:"Rogue",atm:"allrogue",cc:"nissan-rogue",w:"\u26A0 CVT is the watch-out again. Otherwise roomy and cheap; inspect the transmission carefully."}
+    ]},
+    {n:"Hyundai",cc:"hyundai",models:[
+      {n:"Elantra",cc:"hyundai-elantra",w:"\u26A0 Check the engine: some 2011–2019 Hyundai/Kia 2.0/2.4 engines had failures (recall/warranty). Also verify it has an immobilizer (anti-theft) for insurance."},
+      {n:"Sonata",cc:"hyundai-sonata",w:"\u26A0 2011–2014 2.4L Theta II engines had rod-knock failures — confirm engine recall work. Check anti-theft immobilizer too."},
+      {n:"Tucson",cc:"hyundai-tucson",w:"\u26A0 Some 2.4L engines covered by the Theta II issue; confirm any recall work. Otherwise a value pick."}
+    ]},
+    {n:"Kia",cc:"kia",models:[
+      {n:"Soul",cc:"kia-soul",w:"\u26A0 Some 2.0/2.4 engines share the Theta II failure history — check recall status. Verify anti-theft immobilizer for insurance/theft risk."},
+      {n:"Forte",cc:"kia-forte",w:"\u26A0 Check engine recall history on 2014–2019. Confirm immobilizer. Good value when sound."},
+      {n:"Sportage",cc:"kia-sportage",w:"\u26A0 Theta II 2.4L engine caution on some years — confirm recall work before buying."}
+    ]},
+    {n:"Lexus",cc:"lexus",models:[
+      {n:"ES 350",cc:"lexus-es_350",w:"Toyota reliability with a premium feel. Very few systemic issues — an excellent high-mileage value."},
+      {n:"RX 350",cc:"lexus-rx_350",w:"Dependable luxury SUV. Holds up well past 150k. Inspect normally — few chronic problems."}
+    ]},
+    {n:"Ford",cc:"ford",models:[
+      {n:"Fusion",atm:"allfusion",cc:"ford-fusion",w:"Decent midsize. Avoid 1.6L EcoBoost years with coolant/overheating reports; 2.5L is the simpler, safer engine."},
+      {n:"Escape",atm:"allescape",cc:"ford-escape",w:"\u26A0 2013–2014 1.6L EcoBoost had overheating/coolant-intrusion issues. The 2.5L 4-cyl is the dependable choice."},
+      {n:"F-150",cc:"ford-f_150",w:"Solid truck. 5.0L V8 is the simple, durable pick; early EcoBoost has more to inspect. Check for tow wear."}
+    ]},
+    {n:"Chevrolet",cc:"chevrolet",models:[
+      {n:"Malibu",atm:"allmalibu",cc:"chevrolet-malibu",w:"Reasonable midsize value. Check 2016+ for transmission complaints; otherwise inspect normally."},
+      {n:"Equinox",atm:"allequinox",cc:"chevrolet-equinox",w:"\u26A0 2010–2017 2.4L is known for excessive oil consumption and timing-chain wear. Inspect carefully or favor the V6/1.5T."},
+      {n:"Impala",atm:"allimpala",cc:"chevrolet-impala",w:"Roomy and cheap. Generally durable; inspect for typical age-related wear."}
+    ]}
+  ];
+
+  const PICKS=[
+    {label:"Toyota Corolla",mk:1,md:0},{label:"Toyota Camry",mk:1,md:1},{label:"Toyota RAV4",mk:1,md:2},
+    {label:"Honda Civic",mk:2,md:0},{label:"Honda CR-V",mk:2,md:2},{label:"Mazda3",mk:3,md:0},
+    {label:"Subaru Outback",mk:4,md:0},{label:"Toyota Prius",mk:1,md:3}
+  ];
+
+  const $=id=>document.getElementById(id);
+  const makeSel=$("make"),modelSel=$("model"),yearSel=$("minYear"),watchBox=$("watch");
+
+  MAKES.forEach((m,i)=>{const o=document.createElement("option");o.value=i;o.textContent=m.n;makeSel.appendChild(o);});
+  const now=new Date().getFullYear();
+  yearSel.innerHTML='<option value="">Any year</option>';
+  for(let y=now;y>=2005;y--){const o=document.createElement("option");o.value=y;o.textContent=y+" or newer";yearSel.appendChild(o);}
+
+  function fillModels(makeIdx,sel){
+    const m=MAKES[makeIdx];modelSel.innerHTML='<option value="">Any model</option>';
+    m.models.forEach((md,i)=>{const o=document.createElement("option");o.value=i;o.textContent=md.n;modelSel.appendChild(o);});
+    modelSel.disabled=m.models.length===0;
+    if(typeof sel==="number")modelSel.value=sel;
+    showWatch();
+  }
+  function showWatch(){
+    const m=MAKES[+makeSel.value||0];const md=m.models[+modelSel.value];
+    if(md&&modelSel.value!==""&&md.w){watchBox.innerHTML="<b>Reliability watch-out — "+md.n+":</b> "+md.w;watchBox.classList.add("show");}
+    else{watchBox.classList.remove("show");}
+  }
+  makeSel.addEventListener("change",()=>{fillModels(+makeSel.value);save();});
+  modelSel.addEventListener("change",()=>{showWatch();save();});
+
+  const chips=$("chips");
+  PICKS.forEach(p=>{const b=document.createElement("button");b.className="chip";b.type="button";b.textContent=p.label;
+    b.addEventListener("click",()=>{makeSel.value=p.mk;fillModels(p.mk,p.md);save();$("go").scrollIntoView({behavior:"smooth",block:"center"});});
+    chips.appendChild(b);});
+
+  function snapshot(){return{zip:$("zip").value,radius:$("radius").value,maxPrice:$("maxPrice").value,maxMiles:$("maxMiles").value,make:makeSel.value,model:modelSel.value,minYear:yearSel.value,body:$("body").value};}
+  function save(){try{localStorage.setItem("carfinder",JSON.stringify(snapshot()));}catch(e){}}
+  function applySnap(s){
+    if(!s)return;
+    $("zip").value=s.zip||"32119";$("radius").value=s.radius||"50";$("maxPrice").value=s.maxPrice||"15000";
+    $("maxMiles").value=s.maxMiles||"";$("body").value=s.body||"";
+    if(s.make){makeSel.value=s.make;fillModels(+s.make,s.model!==""&&s.model!=null?+s.model:undefined);}else{fillModels(0);}
+    if(s.minYear)yearSel.value=s.minYear;else yearSel.value="";
+    showWatch();
+  }
+  function load(){try{applySnap(JSON.parse(localStorage.getItem("carfinder")||"null"));}catch(e){}}
+  ["zip","radius","maxPrice","maxMiles","body"].forEach(id=>$(id).addEventListener("change",save));
+  yearSel.addEventListener("change",save);
+
+  function getState(){
+    const mk=MAKES[+makeSel.value||0];
+    const md=(modelSel.value!==""&&mk.models[+modelSel.value])?mk.models[+modelSel.value]:null;
+    return{zip:($("zip").value||"32119").trim(),radius:$("radius").value,maxPrice:parseInt($("maxPrice").value)||0,
+      maxMiles:parseInt($("maxMiles").value)||0,minYear:yearSel.value,body:$("body").value,make:mk,model:md};
+  }
+
+  function autoTempest(s){
+    const p=new URLSearchParams();
+    if(s.make.cc)p.set("make",s.make.cc);
+    if(s.model&&s.model.atm)p.set("model",s.model.atm);
+    if(s.maxPrice)p.set("maxprice",s.maxPrice);
+    if(s.maxMiles)p.set("maxmiles",s.maxMiles);
+    if(s.minYear)p.set("minyear",s.minYear);
+    if(s.radius!=="0")p.set("radius",s.radius);
+    p.set("zip",s.zip);p.set("title","clean");
+    return"https://www.autotempest.com/results?"+p.toString();
+  }
+  function carsDotCom(s){
+    const p=new URLSearchParams();p.set("stock_type","used");
+    if(s.make.cc)p.append("makes[]",s.make.cc);
+    if(s.model)p.append("models[]",s.model.cc);
+    if(s.maxPrice)p.set("list_price_max",s.maxPrice);
+    if(s.maxMiles)p.set("mileage_max",s.maxMiles);
+    if(s.minYear)p.set("year_min",s.minYear);
+    if(s.body)p.append("body_style_slugs[]",s.body);
+    p.set("maximum_distance",s.radius==="0"?"all":s.radius);p.set("zip",s.zip);p.set("sort","list_price");
+    return"https://www.cars.com/shopping/results/?"+p.toString();
+  }
+  function facebook(s){
+    const p=new URLSearchParams();
+    if(s.maxPrice)p.set("maxPrice",s.maxPrice);
+    if(s.maxMiles)p.set("maxMileage",s.maxMiles);
+    if(s.minYear)p.set("minYear",s.minYear);
+    p.set("exact","false");
+    const q=[s.make.n!=="Any make"?s.make.n:"",s.model?s.model.n:""].filter(Boolean).join(" ");
+    if(q)p.set("query",q);
+    return"https://www.facebook.com/marketplace/category/vehicles?"+p.toString();
+  }
+  function google(s){
+    const parts=["used"];if(s.minYear)parts.push(s.minYear+"+");
+    if(s.make.n!=="Any make")parts.push(s.make.n);if(s.model)parts.push(s.model.n);
+    parts.push("for sale");if(s.maxPrice)parts.push("under $"+s.maxPrice.toLocaleString());parts.push("near "+s.zip);
+    return"https://www.google.com/search?q="+encodeURIComponent(parts.join(" "));
+  }
+  function buildSites(s){return[
+    {name:"AutoTempest",tag:"5 sites + clean title",scope:"AutoTrader · Cars.com · CarGurus · eBay · Craigslist, all at once",url:autoTempest(s),hero:true},
+    {name:"Cars.com",scope:"Full filters · dealer + private",url:carsDotCom(s)},
+    {name:"Facebook Marketplace",scope:"Private-party deals · price + year",url:facebook(s)},
+    {name:"Google",scope:"Widest net · always works",url:google(s)}
+  ];}
+
+  let lastSites=[];
+  function render(){
+    save();const s=getState();const sites=buildSites(s);lastSites=sites;
+    const milesTxt=s.maxMiles?"≤ "+s.maxMiles.toLocaleString()+" mi":"any mileage";
+    const yearTxt=s.minYear?s.minYear+"+":"any year";
+    const radTxt=s.radius==="0"?"any distance":s.radius+" mi";
+    const vehicle=[s.make.n!=="Any make"?s.make.n:"Any make",s.model?s.model.n:""].filter(Boolean).join(" ");
+    let html='<div class="toolbar"><button class="btn-sm solid" id="openAll">\u2934 Open all searches</button></div>';
+    html+='<div class="summary"><b>'+vehicle+'</b> · under <b>$'+s.maxPrice.toLocaleString()+'</b> · '+milesTxt+' · '+yearTxt
+      +'<br>Within <b>'+radTxt+'</b> of <b>'+s.zip+'</b>'+(s.body?' · '+s.body:'')+' · <span class="clean">clean title \u2713 (AutoTempest)</span></div>';
+    sites.forEach(site=>{
+      html+='<a class="site'+(site.hero?' hero-link':'')+'" href="'+site.url+'" target="_blank" rel="noopener">'
+        +'<span><span class="name">'+site.name+(site.tag?' <span class="tag">'+site.tag+'</span>':'')+'</span><div class="scope">'+site.scope+'</div></span>'
+        +'<span class="arrow">→</span></a>';
+    });
+    $("results").innerHTML=html;
+    $("openAll").addEventListener("click",openAll);
+    $("results").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  function openAll(){
+    if(!lastSites.length)return;
+    lastSites.forEach((site,i)=>setTimeout(()=>window.open(site.url,"_blank","noopener"),i*250));
+  }
+  $("go").addEventListener("click",render);
+
+  function getSaved(){try{return JSON.parse(localStorage.getItem("carfinder_saved")||"[]");}catch(e){return[];}}
+  function setSaved(a){try{localStorage.setItem("carfinder_saved",JSON.stringify(a));}catch(e){}}
+  function critText(snap){
+    const mk=MAKES[+snap.make||0];const md=mk.models[+snap.model];
+    const v=[mk.n!=="Any make"?mk.n:"Any",md?md.n:""].filter(Boolean).join(" ");
+    return v+" · ≤$"+(parseInt(snap.maxPrice)||0).toLocaleString()+(snap.minYear?" · "+snap.minYear+"+":"")+" · "+(snap.radius==="0"?"any dist":snap.radius+"mi")+" "+(snap.zip||"");
+  }
+  function renderSaved(){
+    const list=getSaved();const el=$("savedList");
+    if(!list.length){el.innerHTML='<p class="empty">No saved searches yet — set criteria and tap Save.</p>';return;}
+    el.innerHTML="";
+    list.forEach((item,idx)=>{
+      const row=document.createElement("div");row.className="saved-item";
+      row.innerHTML='<div><div class="nm"></div><div class="crit"></div></div>'
+        +'<div class="saved-actions"><button class="mini run">Run</button><button class="mini del">✕</button></div>';
+      row.querySelector(".nm").textContent=item.name;
+      row.querySelector(".crit").textContent=critText(item.snap);
+      row.querySelector(".run").addEventListener("click",()=>{applySnap(item.snap);save();render();});
+      row.querySelector(".del").addEventListener("click",()=>{const a=getSaved();a.splice(idx,1);setSaved(a);renderSaved();});
+      el.appendChild(row);
+    });
+  }
+  $("saveBtn").addEventListener("click",()=>{
+    const name=($("saveName").value||"").trim()||critText(snapshot());
+    const a=getSaved();a.unshift({name:name,snap:snapshot()});setSaved(a);$("saveName").value="";renderSaved();
+  });
+
+  fillModels(0);load();renderSaved();
+})();
+</script>
 </body>
 </html>
