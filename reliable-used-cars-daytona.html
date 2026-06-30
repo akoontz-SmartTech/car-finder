@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reliable Used Cars Under $15K — Daytona Beach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asphalt:#15191D;
+    --asphalt-2:#1E242A;
+    --paper:#ECEDE8;
+    --ink:#191C1A;
+    --muted:#5C6168;
+    --line:#D5D7D0;
+    --amber:#F2B33D;
+    --green:#2C6E49;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* HERO */
+  .hero{
+    background:var(--asphalt);
+    color:var(--paper);
+    padding:48px 0 40px;
+    border-bottom:3px solid var(--amber);
+  }
+  .eyebrow{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--amber);
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:700;
+    font-size:clamp(2.4rem,8vw,3.8rem);
+    line-height:.98;
+    letter-spacing:-.01em;
+    text-transform:uppercase;
+  }
+  .hero h1 .budget{color:var(--amber)}
+  .hero p.sub{
+    margin-top:16px;
+    max-width:48ch;
+    color:#C3C8C9;
+    font-size:1.02rem;
+  }
+  .stamp{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:22px;
+    font-family:'Space Mono',monospace;
+    font-size:.74rem;
+    letter-spacing:.04em;
+    color:#8B9197;
+    border:1px solid #333B42;
+    padding:7px 12px;
+    border-radius:2px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+
+  /* SECTIONS */
+  section{padding:40px 0}
+  .label{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:.78rem;
+    color:var(--muted);
+    display:flex;align-items:center;gap:12px;
+    margin-bottom:20px;
+  }
+  .label::after{content:"";flex:1;height:1px;background:var(--line)}
+  h2{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:700;
+    font-size:1.7rem;
+    text-transform:uppercase;
+    letter-spacing:.005em;
+    margin-bottom:6px;
+  }
+  .lead{color:var(--muted);max-width:60ch;margin-bottom:8px}
+
+  /* MODELS GRID */
+  .models{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:18px;
+  }
+  .model{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:16px 16px 18px;
+  }
+  .model h3{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:600;
+    font-size:1.15rem;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+  }
+  .model .note{font-size:.88rem;color:var(--muted);margin-top:5px}
+  .model .yr{
+    font-family:'Space Mono',monospace;
+    font-size:.72rem;color:var(--green);font-weight:700;
+    margin-top:10px;display:block;
+  }
+
+  /* LISTINGS */
+  .listing{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:3px solid var(--amber);
+    border-radius:4px;
+    padding:16px 18px;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+  }
+  .listing .car h3{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:600;font-size:1.18rem;
+    text-transform:uppercase;letter-spacing:.01em;
+  }
+  .listing .meta{
+    font-family:'Space Mono',monospace;
+    font-size:.74rem;color:var(--muted);margin-top:6px;
+  }
+  .listing .price{
+    font-family:'Space Mono',monospace;
+    font-weight:700;font-size:1.25rem;
+    white-space:nowrap;color:var(--ink);
+  }
+  .verify{
+    font-size:.82rem;color:var(--muted);
+    margin-top:14px;font-style:italic;
+  }
+
+  /* BROWSE LINKS */
+  .links{display:grid;gap:10px;margin-top:16px}
+  a.browse{
+    display:flex;justify-content:space-between;align-items:center;
+    background:#fff;border:1px solid var(--line);border-radius:4px;
+    padding:15px 18px;text-decoration:none;color:var(--ink);
+    transition:border-color .15s ease,transform .15s ease;
+  }
+  a.browse:hover,a.browse:focus-visible{border-color:var(--amber);transform:translateX(3px)}
+  a.browse:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  a.browse .name{font-family:'Saira Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem}
+  a.browse .how{font-size:.82rem;color:var(--muted);margin-top:2px}
+  a.browse .arrow{font-family:'Space Mono',monospace;color:var(--amber);font-weight:700}
+
+  /* CHECKLIST */
+  .check{
+    background:var(--asphalt);color:var(--paper);
+    border-radius:6px;padding:26px 24px;margin-top:8px;
+  }
+  .check h2{color:#fff}
+  .check ul{list-style:none;margin-top:14px}
+  .check li{
+    padding:9px 0 9px 28px;position:relative;
+    border-bottom:1px solid #2A3137;font-size:.95rem;color:#D4D8D9;
+  }
+  .check li:last-child{border-bottom:none}
+  .check li::before{
+    content:"✓";position:absolute;left:0;top:9px;
+    color:var(--amber);font-weight:700;
+  }
+
+  footer{
+    padding:30px 0 50px;color:var(--muted);font-size:.8rem;
+    border-top:1px solid var(--line);
+  }
+  footer b{color:var(--ink)}
+
+  @media (max-width:560px){
+    .models{grid-template-columns:1fr}
+    .listing{flex-direction:column;gap:8px}
+    .listing .price{font-size:1.4rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Daytona Beach · Volusia County, FL</div>
+      <h1>Reliable Used Cars <span class="budget">Under $15K</span></h1>
+      <p class="sub">A shortlist built around vehicles that hold up — clean title only, no salvage, rebuilt, or flood history.</p>
+      <span class="stamp"><span class="dot"></span> CLEAN TITLE ONLY · UPDATED JUN 2026</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="label">The screen</div>
+      <h2>What "reliable" means here</h2>
+      <p class="lead">Two filters do most of the work. First, <b>clean title</b> — that rules out cars previously written off by an insurer. Second, a track record: the models below are the ones that routinely cross 150K+ miles without drama, which is what you want when buying used. Everything here sits comfortably under the $15,000 line.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="label">Worth targeting</div>
+      <h2>Models that go the distance</h2>
+      <p class="lead">Search by these first. At this budget you're typically looking at model years roughly 2013–2019 depending on mileage.</p>
+      <div class="models">
+        <div class="model">
+          <h3>Toyota Corolla / Camry</h3>
+          <p class="note">The benchmark for low-drama ownership. Cheap parts, easy service anywhere.</p>
+          <span class="yr">SWEET SPOT: '14–'19</span>
+        </div>
+        <div class="model">
+          <h3>Honda Civic / Accord</h3>
+          <p class="note">Same reliability tier as the Toyotas, a little more fun to drive.</p>
+          <span class="yr">SWEET SPOT: '13–'18</span>
+        </div>
+        <div class="model">
+          <h3>Toyota RAV4</h3>
+          <p class="note">If you want an SUV. Holds value, holds up. Great resale later.</p>
+          <span class="yr">SWEET SPOT: '13–'17</span>
+        </div>
+        <div class="model">
+          <h3>Honda CR-V</h3>
+          <p class="note">Roomy, dependable compact SUV. Avoid the early 1.5T oil-dilution years.</p>
+          <span class="yr">SWEET SPOT: '14–'16</span>
+        </div>
+        <div class="model">
+          <h3>Mazda3 / CX-5</h3>
+          <p class="note">Reliable and the nicest to drive of the bunch. Slightly smaller dealer network.</p>
+          <span class="yr">SWEET SPOT: '14–'18</span>
+        </div>
+        <div class="model">
+          <h3>Toyota Prius</h3>
+          <p class="note">Bulletproof hybrid, excellent for high-mileage commuting or side gigs.</p>
+          <span class="yr">SWEET SPOT: '13–'17</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="label">Live nearby</div>
+      <h2>Examples listed locally</h2>
+      <p class="lead">A few that showed up in the Daytona area. Listings move fast — confirm each is still available and pull a vehicle history report before committing.</p>
+
+      <div class="listing">
+        <div class="car">
+          <h3>2009 Honda Element EX</h3>
+          <div class="meta">142K MI · CLEAN FL TITLE · DAYTONA BEACH</div>
+        </div>
+        <div class="price">$9,250</div>
+      </div>
+
+      <div class="listing">
+        <div class="car">
+          <h3>2010 Toyota Matrix XR AWD</h3>
+          <div class="meta">169K MI · AUTO · PORT ORANGE AREA</div>
+        </div>
+        <div class="price">$6,950</div>
+      </div>
+
+      <div class="listing">
+        <div class="car">
+          <h3>2016 Subaru Outback Limited AWD</h3>
+          <div class="meta">170K MI · LEATHER · MOONROOF · NAV</div>
+        </div>
+        <div class="price">$7,950</div>
+      </div>
+
+      <div class="listing">
+        <div class="car">
+          <h3>2008 Chevy Impala LS</h3>
+          <div class="meta">78K MI · ONE OWNER · CLEAN TITLE</div>
+        </div>
+        <div class="price">$5,500</div>
+      </div>
+
+      <p class="verify">Prices and availability shift daily — treat these as a snapshot, not a guarantee.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="label">Keep browsing</div>
+      <h2>Live searches near you</h2>
+      <p class="lead">Each link goes to current inventory. Set the max price to $15,000 and turn on the clean-title / no-accident filter.</p>
+      <div class="links">
+        <a class="browse" href="https://www.cargurus.com/Cars/spt-cars-under-15000-Daytona-Beach_L4931" target="_blank" rel="noopener">
+          <span><span class="name">CarGurus</span><div class="how">Filter History → Clean title only</div></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="browse" href="https://www.cars.com/shopping/daytona_beach-fl/" target="_blank" rel="noopener">
+          <span><span class="name">Cars.com</span><div class="how">Set max $15K → "No accidents / clean title"</div></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="browse" href="https://www.carfax.com/" target="_blank" rel="noopener">
+          <span><span class="name">CARFAX</span><div class="how">History report built into every listing</div></span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="browse" href="https://www.truecar.com/used-cars-for-sale/listings/location-daytona-beach-fl/" target="_blank" rel="noopener">
+          <span><span class="name">TrueCar</span><div class="how">Stack price + clean title + radius</div></span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="check">
+        <h2>Before you hand over money</h2>
+        <ul>
+          <li>Run the VIN through a history report — confirm the title is actually clean, not just claimed.</li>
+          <li>Check for clean, consistent service records, especially oil changes.</li>
+          <li>In Florida, look hard for rust underneath and any signs of flood/water damage.</li>
+          <li>Get a pre-purchase inspection from an independent mechanic ($100–150, worth every dollar).</li>
+          <li>Test drive cold — start it yourself after it's sat overnight if you can.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      A <b>clean title</b> means the vehicle has never been declared a total loss by an insurer — it excludes salvage, rebuilt, and flood-branded titles. This sheet is a starting point for the Daytona Beach / Volusia County area; verify all prices, mileage, and title status directly with the seller.
+    </div>
+  </footer>
+
+</body>
+</html>
